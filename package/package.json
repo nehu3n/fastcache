@@ -1,0 +1,28 @@
+{
+	"name": "fastcache",
+	"version": "1.0.0",
+	"description": "⚡ Blazing-fast, multi-algorithm in-memory database.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nehu3n/fastcache.git"
+	},
+	"homepage": "https://github.com/nehu3n/fastcache?tab=readme-ov-file",
+	"main": "./dist/index.js",
+	"scripts": {
+		"build": "tsc"
+	},
+	"keywords": [
+		"cache",
+		"in-memory",
+		"database",
+		"fast",
+		"blazing-fast",
+		"node-cache",
+		"lru"
+	],
+	"author": "Nehuén <https://github.com/nehu3n>",
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "1.9.3"
+	}
+}
