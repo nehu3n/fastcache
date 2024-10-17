@@ -1,7 +1,17 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
 import type { KeyValue, KeyValueResult } from "../definitions/types";
 
+type LRUOptions = {
+  ttl: number;
+};
+
 class LRUManager implements CacheManagerInterface {
+  readonly options: LRUOptions;
+
+  constructor(options: LRUOptions) {
+    this.options = options;
+  }
+
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   set(_key: string, _value: any): boolean {
     throw new Error("Method not implemented.");
@@ -41,3 +51,4 @@ class LRUManager implements CacheManagerInterface {
 }
 
 export { LRUManager };
+export type { LRUOptions };

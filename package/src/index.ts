@@ -1,1 +1,1 @@
-console.log("Hello world!");
+export { Cache } from "./lib/cache";

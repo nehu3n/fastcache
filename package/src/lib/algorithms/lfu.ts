@@ -1,7 +1,17 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
 import type { KeyValue, KeyValueResult } from "../definitions/types";
 
+type LFUOptions = {
+  ttl: number;
+}
+
 class LFUManager implements CacheManagerInterface {
+    readonly options: LFUOptions;
+
+  constructor(options: LFUOptions) {
+    this.options = options;
+  }
+
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   set(_key: string, _value: any): boolean {
     throw new Error("Method not implemented.");
@@ -41,3 +51,4 @@ class LFUManager implements CacheManagerInterface {
 }
 
 export { LFUManager };
+export type { LFUOptions };

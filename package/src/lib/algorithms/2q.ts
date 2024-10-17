@@ -1,7 +1,17 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
 import type { KeyValue, KeyValueResult } from "../definitions/types";
 
+type TwoQOptions = {
+  ttl: number;
+};
+
 class TwoQManager implements CacheManagerInterface {
+  readonly options: TwoQOptions;
+
+  constructor(options: TwoQOptions) {
+    this.options = options;
+  }
+
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   set(_key: string, _value: any): boolean {
     throw new Error("Method not implemented.");
@@ -41,3 +51,4 @@ class TwoQManager implements CacheManagerInterface {
 }
 
 export { TwoQManager };
+export type { TwoQOptions };

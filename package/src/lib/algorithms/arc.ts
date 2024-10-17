@@ -1,7 +1,17 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
 import type { KeyValue, KeyValueResult } from "../definitions/types";
 
+type ARCOptions = {
+  ttl: number;
+}
+
 class ARCManager implements CacheManagerInterface {
+  readonly options: ARCOptions;
+
+  constructor(options: ARCOptions) {
+    this.options = options;
+  }
+
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   set(_key: string, _value: any): boolean {
     throw new Error("Method not implemented.");
@@ -41,3 +51,4 @@ class ARCManager implements CacheManagerInterface {
 }
 
 export { ARCManager };
+export type { ARCOptions };
