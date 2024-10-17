@@ -2,7 +2,7 @@ import type { KeyValue, KeyValueResult } from "./types";
 
 interface CacheManagerInterface {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  set(key: string, value: any): boolean;
+  set(key: string | number, value: any): void;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   get(key: string): any;
   del(key: string): boolean;
