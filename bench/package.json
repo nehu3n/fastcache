@@ -1,0 +1,10 @@
+{
+    "devDependencies": {
+        "tinybench": "^2.9.0"
+    },
+    "dependencies": {
+        "flat-cache": "^6.1.0",
+        "lru-cache": "^11.0.1",
+        "node-cache": "^5.1.2"
+    }
+}

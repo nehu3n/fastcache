@@ -3,7 +3,6 @@ import type { KeyValue, KeyValueResult } from "../definitions/types";
 
 type LRUOptions = {
   ttl: number;
-  capacity: number;
 };
 
 class Node {
@@ -26,7 +25,7 @@ class Node {
 class LRUManager implements CacheManagerInterface {
   readonly options: LRUOptions;
 
-  private capacity: number;
+  private capacity = 1e6;
   private map: Map<string | number, Node>;
   private head: Node;
   private tail: Node;
@@ -34,7 +33,6 @@ class LRUManager implements CacheManagerInterface {
 
   constructor(options: LRUOptions) {
     this.options = options;
-    this.capacity = options.capacity || 1e6;
     this.map = new Map();
     this.head = new Node(0, 0);
     this.tail = new Node(0, 0);
