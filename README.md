@@ -1,18 +1,20 @@
 <img src="./public/logo.png" width="100" align="right" />
 
-# FastCache - KV Database.
+# FastCache - Key-Value Database
 
-**FastCache** is a **blazing-fast**, **easy-to-use**, **highly customizable** in-memory database with **support for multiple cache algorithms**. Written purely in TypeScript with **performance in mind**. 🔥
+**FastCache** is a **blazing-fast**, **easy-to-use**, and **highly customizable** in-memory key-value database with **support for multiple caching algorithms**. It is entirely written in TypeScript and designed for **high performance** and **flexibility**. 🔥
 
 ## ✨ Features
 
-- ⚡ **Blazing-fast:** Made with _performance in mind_, **FastCache** is optimized for _exceptional speed_. [See benchmarks](./bench) to compare with other cache packages in the ecosystem. **_(≈8.000.000 op/s 🧪)_**
+- ⚡ **Blazing-fast performance:** Designed with **speed** in mind, **FastCache** is optimized for exceptional performance, making it ideal for applications that need fast data access. [Check out the benchmarks](./bench) to see how it compares to other cache packages in the ecosystem. **_(≈8,000,000 operations per second 🧪)_**
 
-- 👀 **Easy-to-use:** An API designed to be **easy to use** and read, written with _type-safe_ and assured development experience.
+- 👀 **Easy-to-use API:** With a simple and intuitive API, **FastCache** offers a seamless and safe development experience, using **type-safe** TypeScript to reduce errors and make everyday work easier.
 
-- 🎨 **Highly customizable:** It provides **customization options and settings** of all kinds for each context. Functions such as **TTL** and **separate spaces**.
+- 🎨 **Highly customizable:** Tailor your cache with options like **TTL** (Time-To-Live) and **separate namespaces**. **FastCache** is adaptable to your application's specific needs, allowing you to maximize both performance and control.
 
-- 🚀 **Multiple-algorithm:** Support for various caching algorithms such as **LRU**, **2Q**, **LFU**, **FIFO** and **ARC**. _Use the one that suits you best._
+- 🚀 **Multi-algorithm support:** It supports a variety of caching algorithms such as **LRU** (Least Recently Used), **2Q**, **LFU** (Least Frequently Used), **FIFO** (First In, First Out), and **ARC** (Adaptive Replacement Cache). This allows you to choose the algorithm that best fits your data access pattern or memory requirements.
+
+- 📂 **Persistence:** Provides an option for persistence through the file system. You can create ultra-efficient and targeted directory structures for searching, allowing you to maintain data consistency even when the application restarts.
 
 ## 📚 Guide
 
@@ -20,8 +22,8 @@ WIP.
 
 ## 🧪 Benchmarks
 
-You can look at the benchmarks in the [bench](./bench) folder. It has analysis and graphics accompanying the code.
+You can explore the benchmarks in the [bench](./bench) folder, which includes detailed performance comparisons with other cache systems, along with analysis and visualizations. These results demonstrate how **FastCache** outperforms other solutions in the ecosystem.
 
 ## 📄 License
 
-**FastCache** is licensed under the [MIT License](./LICENSE).
+**FastCache** is licensed under the [MIT License](./LICENSE), allowing you the freedom to modify and distribute the code, as long as the copyright notice is retained.
