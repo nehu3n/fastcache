@@ -3,25 +3,57 @@ import type { KeyValue, KeyValueResult } from "../definitions/types";
 
 type FIFOOptions = {
   ttl: number;
-}
+};
 
 class FIFOManager implements CacheManagerInterface {
   readonly options: FIFOOptions;
+  private capacity = 1e6;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  private cache: Map<string, any>;
+  private order: string[];
 
   constructor(options: FIFOOptions) {
     this.options = options;
+    this.cache = new Map();
+    this.order = [];
   }
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  set(_key: string, _value: any): boolean {
-    throw new Error("Method not implemented.");
+  set(key: string, value: any): boolean {
+    if (this.cache.has(key)) {
+      this.cache.set(key, value);
+      return true;
+    }
+
+    if (this.cache.size >= this.capacity) {
+      const oldestKey = this.order.shift();
+      if (oldestKey !== undefined) {
+        this.cache.delete(oldestKey);
+      }
+    }
+
+    this.cache.set(key, value);
+    this.order.push(key);
+    return true;
   }
-  get(_key: string) {
-    throw new Error("Method not implemented.");
+
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  get(key: string): any | undefined {
+    return this.cache.get(key);
   }
-  del(_key: string): boolean {
-    throw new Error("Method not implemented.");
+
+  del(key: string): boolean {
+    if (this.cache.has(key)) {
+      this.cache.delete(key);
+      const index = this.order.indexOf(key);
+      if (index > -1) {
+        this.order.splice(index, 1);
+      }
+      return true;
+    }
+    return false;
   }
+
   has(_key: string): boolean {
     throw new Error("Method not implemented.");
   }
