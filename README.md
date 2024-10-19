@@ -1,5 +1,8 @@
 <img src="./public/logo.png" width="100" align="right" />
 
+> [!WARNING] 
+> **FastCache** is in the development stage. It is not ready for any use at this time. ⏰
+
 # FastCache - Key-Value Database
 
 **FastCache** is a **blazing-fast**, **easy-to-use**, and **highly customizable** in-memory key-value database with **support for multiple caching algorithms**. It is entirely written in TypeScript and designed for **high performance** and **flexibility**. 🔥
