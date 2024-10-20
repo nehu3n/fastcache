@@ -4,7 +4,7 @@ import type {
   KeyValue,
   KeyValueResult,
   MultipleGetParam,
-  OptionsClear,
+  OptionsClearKeysValues,
   SetOptions,
 } from "../definitions/types";
 
@@ -154,14 +154,14 @@ class ARCManager implements CacheManagerInterface {
   mhas(_keys: string[]): KeyValueResult {
     throw new Error("Method not implemented.");
   }
-  clear(_options?: OptionsClear): boolean {
+  clear(_options?: OptionsClearKeysValues): boolean {
     throw new Error("Method not implemented.");
   }
-  keys(): string[] {
+  keys(_options?: OptionsClearKeysValues): string[] {
     throw new Error("Method not implemented.");
   }
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  values(): any[] {
+  values(_options?: OptionsClearKeysValues): any[] {
     throw new Error("Method not implemented.");
   }
 }

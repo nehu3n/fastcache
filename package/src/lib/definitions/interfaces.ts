@@ -3,7 +3,7 @@ import type {
   KeyValue,
   KeyValueResult,
   MultipleGetParam,
-  OptionsClear,
+  OptionsClearKeysValues,
   SetOptions,
 } from "./types";
 
@@ -21,10 +21,10 @@ interface CacheManagerInterface {
   mdel(keys: string[]): KeyValueResult;
   mhas(keys: string[]): KeyValueResult;
 
-  clear(options?: OptionsClear): boolean;
-  keys(): string[];
+  clear(options?: OptionsClearKeysValues): boolean;
+  keys(options?: OptionsClearKeysValues): string[];
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  values(): any[];
+  values(options?: OptionsClearKeysValues): any[];
 }
 
 export type { CacheManagerInterface };

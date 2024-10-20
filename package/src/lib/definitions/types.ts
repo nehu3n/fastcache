@@ -25,7 +25,7 @@ type TypeMultipleGet = {
 
 type MultipleGetParam = TypeMultipleGet[] | string[];
 
-type OptionsClear = {
+type OptionsClearKeysValues = {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   filter: (key: string, value: any) => void;
 };
@@ -36,5 +36,5 @@ export type {
   SetOptions,
   GetOptions,
   MultipleGetParam,
-  OptionsClear,
+  OptionsClearKeysValues,
 };
