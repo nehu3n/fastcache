@@ -1,5 +1,10 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
-import type { KeyValue, KeyValueResult, SetOptions } from "../definitions/types";
+import type {
+  GetOptions,
+  KeyValue,
+  KeyValueResult,
+  SetOptions,
+} from "../definitions/types";
 
 type TwoQOptions = {
   ttl: number;
@@ -113,7 +118,7 @@ class TwoQManager implements CacheManagerInterface {
   }
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  get(key: string): any | undefined {
+  get(key: string, _options?: GetOptions): any | undefined {
     if (this.mainQueue.has(key)) {
       // biome-ignore lint/style/noNonNullAssertion: <explanation>
       const node = this.mainQueue.get(key)!;

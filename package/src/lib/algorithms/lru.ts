@@ -1,5 +1,10 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
-import type { KeyValue, KeyValueResult, SetOptions } from "../definitions/types";
+import type {
+  GetOptions,
+  KeyValue,
+  KeyValueResult,
+  SetOptions,
+} from "../definitions/types";
 
 type LRUOptions = {
   ttl: number;
@@ -78,7 +83,10 @@ class LRUManager implements CacheManagerInterface {
     this.count++;
   }
 
-  get(key: string | number): string | number | boolean | undefined {
+  get(
+    key: string | number,
+    _options: GetOptions
+  ): string | number | boolean | undefined {
     if (!this.map.has(key)) {
       return undefined;
     }

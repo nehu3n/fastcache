@@ -1,5 +1,10 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
-import type { KeyValue, KeyValueResult, SetOptions } from "../definitions/types";
+import type {
+  GetOptions,
+  KeyValue,
+  KeyValueResult,
+  SetOptions,
+} from "../definitions/types";
 
 type FIFOOptions = {
   ttl: number;
@@ -38,7 +43,7 @@ class FIFOManager implements CacheManagerInterface {
   }
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  get(key: string): any | undefined {
+  get(key: string, _options?: GetOptions): any | undefined {
     return this.cache.get(key);
   }
 

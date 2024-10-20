@@ -1,5 +1,10 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
-import type { KeyValue, KeyValueResult, SetOptions } from "../definitions/types";
+import type {
+  GetOptions,
+  KeyValue,
+  KeyValueResult,
+  SetOptions,
+} from "../definitions/types";
 
 type LFUOptions = {
   ttl: number;
@@ -54,7 +59,7 @@ class LFUManager implements CacheManagerInterface {
   }
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  get(key: string): any | undefined {
+  get(key: string, _options?: GetOptions): any | undefined {
     if (!this.cache.has(key)) return undefined;
 
     // biome-ignore lint/style/noNonNullAssertion: <explanation>

@@ -13,4 +13,9 @@ type SetOptions = {
   priority?: 1 | 2 | 3;
 };
 
-export type { KeyValue, KeyValueResult, SetOptions };
+type GetOptions = {
+  fallback?: () => void;
+  refreshTtl?: boolean;
+};
+
+export type { KeyValue, KeyValueResult, SetOptions, GetOptions };
