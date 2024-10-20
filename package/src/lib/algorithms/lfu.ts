@@ -4,6 +4,7 @@ import type {
   KeyValue,
   KeyValueResult,
   MultipleGetParam,
+  OptionsClear,
   SetOptions,
 } from "../definitions/types";
 
@@ -119,7 +120,7 @@ class LFUManager implements CacheManagerInterface {
   mhas(_keys: string[]): KeyValueResult {
     throw new Error("Method not implemented.");
   }
-  clear(): boolean {
+  clear(_options?: OptionsClear): boolean {
     throw new Error("Method not implemented.");
   }
   keys(): string[] {
