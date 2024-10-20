@@ -1,5 +1,5 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
-import type { KeyValue, KeyValueResult } from "../definitions/types";
+import type { KeyValue, KeyValueResult, SetOptions } from "../definitions/types";
 
 type ARCOptions = {
   ttl: number;
@@ -52,7 +52,7 @@ class ARCManager implements CacheManagerInterface {
   }
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  set(key: string, value: any): boolean {
+  set(key: string, value: any, _options?: SetOptions): boolean {
     if (this.t1.has(key) || this.t2.has(key)) {
       this.get(key);
       this.t1.get(key) ? this.t1.set(key, value) : this.t2.set(key, value);

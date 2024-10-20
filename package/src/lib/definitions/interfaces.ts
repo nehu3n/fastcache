@@ -1,8 +1,8 @@
-import type { KeyValue, KeyValueResult } from "./types";
+import type { KeyValue, KeyValueResult, SetOptions } from "./types";
 
 interface CacheManagerInterface {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  set(key: string | number, value: any): void;
+  set(key: string | number, value: any, options?: SetOptions): void;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   get(key: string): any;
   del(key: string): boolean;

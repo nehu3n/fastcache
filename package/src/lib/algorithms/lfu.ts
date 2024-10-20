@@ -1,5 +1,5 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
-import type { KeyValue, KeyValueResult } from "../definitions/types";
+import type { KeyValue, KeyValueResult, SetOptions } from "../definitions/types";
 
 type LFUOptions = {
   ttl: number;
@@ -27,7 +27,7 @@ class LFUManager implements CacheManagerInterface {
   }
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  set(key: string, value: any): boolean {
+  set(key: string, value: any, _options?: SetOptions): boolean {
     if (this.capacity <= 0) return false;
 
     if (this.cache.has(key)) {

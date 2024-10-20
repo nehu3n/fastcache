@@ -1,5 +1,5 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
-import type { KeyValue, KeyValueResult } from "../definitions/types";
+import type { KeyValue, KeyValueResult, SetOptions } from "../definitions/types";
 
 type LRUOptions = {
   ttl: number;
@@ -56,7 +56,7 @@ class LRUManager implements CacheManagerInterface {
   }
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  set(key: string | number, value: any): void {
+  set(key: string | number, value: any, _options?: SetOptions): void {
     if (this.map.has(key)) {
       // biome-ignore lint/style/noNonNullAssertion: <explanation>
       const existingNode = this.map.get(key)!;

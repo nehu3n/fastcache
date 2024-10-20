@@ -1,5 +1,5 @@
 import type { CacheManagerInterface } from "../definitions/interfaces";
-import type { KeyValue, KeyValueResult } from "../definitions/types";
+import type { KeyValue, KeyValueResult, SetOptions } from "../definitions/types";
 
 type FIFOOptions = {
   ttl: number;
@@ -19,7 +19,7 @@ class FIFOManager implements CacheManagerInterface {
   }
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  set(key: string, value: any): boolean {
+  set(key: string, value: any, _options?: SetOptions): boolean {
     if (this.cache.has(key)) {
       this.cache.set(key, value);
       return true;
