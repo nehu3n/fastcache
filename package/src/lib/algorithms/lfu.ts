@@ -3,6 +3,7 @@ import type {
   GetOptions,
   KeyValue,
   KeyValueResult,
+  MultipleGetParam,
   SetOptions,
 } from "../definitions/types";
 
@@ -109,7 +110,7 @@ class LFUManager implements CacheManagerInterface {
     throw new Error("Method not implemented.");
   }
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  mget(_keys: string[]): { [key: string]: any } {
+  mget(_keys: MultipleGetParam): { [key: string]: any } {
     throw new Error("Method not implemented.");
   }
   mdel(_keys: string[]): KeyValueResult {

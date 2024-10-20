@@ -1,4 +1,10 @@
-import type { GetOptions, KeyValue, KeyValueResult, SetOptions } from "./types";
+import type {
+  GetOptions,
+  KeyValue,
+  KeyValueResult,
+  MultipleGetParam,
+  SetOptions,
+} from "./types";
 
 interface CacheManagerInterface {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -10,7 +16,7 @@ interface CacheManagerInterface {
 
   mset(keyValues: KeyValue[]): KeyValueResult;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  mget(keys: string[]): { [key: string]: any };
+  mget(keys: MultipleGetParam): { [key: string]: any };
   mdel(keys: string[]): KeyValueResult;
   mhas(keys: string[]): KeyValueResult;
 

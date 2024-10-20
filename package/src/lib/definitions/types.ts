@@ -18,4 +18,17 @@ type GetOptions = {
   refreshTtl?: boolean;
 };
 
-export type { KeyValue, KeyValueResult, SetOptions, GetOptions };
+type TypeMultipleGet = {
+  key: string;
+  options?: GetOptions;
+};
+
+type MultipleGetParam = TypeMultipleGet[] | string[];
+
+export type {
+  KeyValue,
+  KeyValueResult,
+  SetOptions,
+  GetOptions,
+  MultipleGetParam,
+};
